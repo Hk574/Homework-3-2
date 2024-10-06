@@ -30,6 +30,12 @@ def test_history(calculator):
     last_calc = calculator.get_last_calculation()
     assert last_calc == ("5 - 2", Decimal('3'))
 
+def test_reset_history(calculator):
+    calculator.add(Decimal('1'), Decimal('2'))
+    Calculator.reset_history()  
+    with pytest.raises(CalculatorError, match="No calculations in history."):
+        calculator.get_last_calculation()
+
 def test_class_method():
     calc = Calculator()
     calc.add(Decimal('2'), Decimal('2'))

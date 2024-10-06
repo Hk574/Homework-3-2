@@ -1,4 +1,5 @@
-"""Module providing a calculator with basic arithmetic operations."""
+"""Module providing an advanved calculator with basic arithmetic operations."""
+
 from decimal import Decimal, getcontext
 from typing import List, Tuple
 
@@ -8,7 +9,7 @@ getcontext().prec = 28
 class CalculatorError(Exception):
     """Custom exception class for errors related to the Calculator."""
 class Calculator:
-    """A class to perform basic arithmetic operations and maintain a history of calculations."""
+    """A class to perform basic arithmetic operations and maintain a history of calculations."""    
     history: List[Tuple[str, Decimal]] = []
 
     @classmethod
@@ -22,6 +23,11 @@ class Calculator:
         if not cls.history:
             raise CalculatorError("No calculations in history.")
         return cls.history[-1]
+
+    @classmethod
+    def reset_history(cls) -> None:
+        """Resets the calculation history."""
+        cls.history.clear()
 
     @staticmethod
     def create_instance() -> 'Calculator':
