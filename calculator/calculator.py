@@ -1,4 +1,4 @@
-""" Module providing a simple calculator with basic arithmetic operations. """
+"""Module providing a calculator with basic arithmetic operations."""
 from decimal import Decimal, getcontext
 from typing import List, Tuple
 
@@ -7,7 +7,6 @@ getcontext().prec = 28
 
 class CalculatorError(Exception):
     """Custom exception class for errors related to the Calculator."""
-
 class Calculator:
     """A class to perform basic arithmetic operations and maintain a history of calculations."""
     history: List[Tuple[str, Decimal]] = []
@@ -24,10 +23,10 @@ class Calculator:
             raise CalculatorError("No calculations in history.")
         return cls.history[-1]
 
-    @classmethod
-    def reset_history(cls) -> None:
-        """Resets the calculation history."""
-        cls.history.clear()
+    @staticmethod
+    def create_instance() -> 'Calculator':
+        """Static method to create a new Calculator instance."""
+        return Calculator()
 
     def add(self, operand1: Decimal, operand2: Decimal) -> Decimal:
         """Adds two Decimal numbers."""
@@ -53,5 +52,4 @@ class Calculator:
             raise CalculatorError("Cannot divide by zero.")
         result = operand1 / operand2
         self.add_to_history(f"{operand1} / {operand2}", result)
-        return result 
-    # End of file
+        return result
