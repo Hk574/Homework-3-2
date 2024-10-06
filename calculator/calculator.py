@@ -54,3 +54,4 @@ class Calculator:
         result = operand1 / operand2
         self.add_to_history(f"{operand1} / {operand2}", result)
         return result 
+    # End of file
