@@ -1,3 +1,4 @@
+""" Module providing a simple calculator with basic arithmetic operations. """
 from decimal import Decimal, getcontext
 from typing import List, Tuple
 
@@ -52,5 +53,4 @@ class Calculator:
             raise CalculatorError("Cannot divide by zero.")
         result = operand1 / operand2
         self.add_to_history(f"{operand1} / {operand2}", result)
-        return result
-    
+        return result 
