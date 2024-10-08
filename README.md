@@ -2,7 +2,7 @@
 
 # Simple Calculator
 
-A simple calculator implemented in Python that performs basic arithmetic operations and maintains a history of calculations using the `Decimal` module for precise arithmetic.
+A simple calculator implemented in Python that performs basic arithmetic operations and maintains a history of calculations using the Decimal module for precise arithmetic.
 
 ## Features
 
